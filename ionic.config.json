@@ -1,0 +1,7 @@
+{
+  "name": "gestasks",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
