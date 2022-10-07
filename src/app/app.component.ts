@@ -6,13 +6,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Outbox', url: '/folder/Outbox', icon: 'paper-plane' },
-    { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
-    { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
-    { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
-    { title: 'Spam', url: '/folder/Spam', icon: 'warning' },
+    { title: 'Inicio', url: '/home', icon: 'home' },
+    { title: 'Gestionar Personas', url: '/home/gestpeople', icon: 'people' },
+    { title: 'Gestionar Tareas', url: '/home/gesttasks', icon: 'create' },
+    { title: 'Asignar Tareas', url: '/home/asigntasks', icon: 'person-add' },
+    { title: 'Ver Tareas Asignadas', url: '/home/seetasks', icon: 'file-tray-full' },
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+
+  //La pestaña home está permanentemente seleccionada debido a que el resto de páginas están dentro de la página home (buscar forma de solucionarlo)
+  
   constructor() {}
 }
