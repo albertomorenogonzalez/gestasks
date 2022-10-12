@@ -5,9 +5,6 @@ import { Person } from '../models/person.model';
   providedIn: 'root'
 })
 export class PersonListService {
-  getPeople(): Person[] {
-    throw new Error('Method not implemented.');
-  }
   public people: Person[] = [
     {
       id: 0,
@@ -17,11 +14,19 @@ export class PersonListService {
       sex: 'male',
       photo: ''
     },
+    {
+      id: 1,
+      name: 'Cristiano',
+      surname: 'Ronaldo',
+      nick: 'El Bicho',
+      sex: 'male',
+      photo: ''
+    },
   ]
 
   constructor() { }
 
-  public getPerson(): Person[] {
+  public getPeople(): Person[] {
     return this.people;
   }
 

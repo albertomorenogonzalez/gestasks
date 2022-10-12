@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { GestpeoplePageRoutingModule } from './gestpeople-routing.module';
 
 import { GestpeoplePage } from './gestpeople.page';
+import { PersonComponentModule } from 'src/app/person/person.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    PersonComponentModule,
     GestpeoplePageRoutingModule
   ],
   declarations: [GestpeoplePage]

@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-card *ngFor="let person of getPeople()"></ion-card>
+  <ion-list *ngFor="let person of getPeople()">
+    <app-person [person]="person"></app-person>
   </ion-list>
 </ion-content>
