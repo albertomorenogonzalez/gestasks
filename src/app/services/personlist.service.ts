@@ -12,7 +12,7 @@ export class PersonListService {
       surname: 'Messi',
       nick: 'GOAT',
       sex: 'male',
-      photo: ''
+      photo: 'http://drive.google.com/uc?export=view&id=1SEmUpHG80RxAp9BClsm3ty79tGERwW0X'
     },
     {
       id: 1,
@@ -20,7 +20,7 @@ export class PersonListService {
       surname: 'Ronaldo',
       nick: 'El Bicho',
       sex: 'male',
-      photo: ''
+      photo: 'http://drive.google.com/uc?export=view&id=1Tq4buMu5VcycRMO4m4HcqYs4oShWYFFd'
     },
   ]
 
