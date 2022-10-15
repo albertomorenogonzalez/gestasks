@@ -1,11 +1,17 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Gestionar Personas</ion-title>
+    <ion-button (click)="onNewPerson()" color="success" slot="end"><ion-icon name="add-outline"></ion-icon></ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor="let person of getPeople()">
-    <app-person [person]="person"></app-person>
-  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let person of getPeople()" size="6" size-xl="3">
+        <app-person [person]="person" (onEdit)="onEditPerson($event)" (onDelete)="onDeletePerson($event)"></app-person>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
 </ion-content>
