@@ -1,9 +1,17 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Gestionar Tareas</ion-title>
+    <ion-button (click)="onNewTask()" color="success" slot="end"><ion-icon name="add-outline"></ion-icon></ion-button>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let task of getTasks()" size="6" size-xl="4">
+        <app-task [task]="task" (onEdit)="onEditTask($event)" (onDelete)="onDeleteTask($event)"></app-task>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
 </ion-content>
