@@ -53,7 +53,7 @@ export class GesttasksPage {
 
   async onDeleteAlert(task){
     const alert = await this.alert.create({
-      header: '¿Estás seguro de que quieres borrar esta persona?',
+      header: '¿Estás seguro de que quieres borrar esta tarea?',
       buttons: [
         {
           text: 'Cancelar',
