@@ -9,7 +9,7 @@ export class AppComponent {
     { title: 'Inicio', url: '/home', icon: 'home' },
     { title: 'Gestionar Personas', url: '/gestpeople', icon: 'people' },
     { title: 'Gestionar Tareas', url: '/gesttasks', icon: 'create' },
-    { title: 'Asignar Tareas', url: '/asigntasks', icon: 'person-add' },
+    { title: 'Asignar Tareas', url: '/assigntasks', icon: 'person-add' },
     { title: 'Ver Tareas Asignadas', url: '/seetasks', icon: 'file-tray-full' }
   ];
   

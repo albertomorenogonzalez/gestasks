@@ -16,8 +16,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/gesttasks/gesttasks.module').then( m => m.GesttasksPageModule)
   },
   {
-    path: 'asigntasks',
-    loadChildren: () => import('./pages/asigntasks/asigntasks.module').then( m => m.AsigntasksPageModule)
+    path: 'assigntasks',
+    loadChildren: () => import('./pages/assigntasks/assigntasks.module').then( m => m.AssigntasksPageModule)
   },
   {
     path: 'seetasks',

@@ -7,7 +7,7 @@ import { Person } from '../models/person.model';
 export class PersonListService {
   private _people: Person[] = [
     {
-      id: 0,
+      id: 1,
       name: 'Lionel',
       surname: 'Messi',
       nick: 'GOAT',
@@ -15,7 +15,7 @@ export class PersonListService {
       photo: 'http://drive.google.com/uc?export=view&id=16JOSGpUKnBVn12RjoaloD-8lXAKdnOkE'
     },
     {
-      id: 1,
+      id: 2,
       name: 'Cristiano',
       surname: 'Ronaldo',
       nick: 'El Bicho',
@@ -23,7 +23,7 @@ export class PersonListService {
       photo: 'http://drive.google.com/uc?export=view&id=1xM39mOtZFzHe1LkSBoCXTsJMPVWo8s-m'
     },
     {
-      id: 2,
+      id: 3,
       name: 'Alberto',
       surname: 'Moreno',
       nick: 'Albmg11',
@@ -31,7 +31,7 @@ export class PersonListService {
       photo: 'http://drive.google.com/uc?export=view&id=1Gbxra57Jf0kDzqMd9sK2ksXI9K-TUIRk'
     },
     {
-      id: 3,
+      id: 4,
       name: 'Juan Antonio',
       surname: 'Aranda',
       nick: 'Galnio',

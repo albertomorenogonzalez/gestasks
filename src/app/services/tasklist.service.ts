@@ -7,7 +7,7 @@ import { Task } from '../models/task.model';
 export class TaskListService {
   private _tasks: Task[] = [
     {
-      id: 0,
+      id: 1,
       name: 'Example',
       time: 12000,
       photo: 'http://drive.google.com/uc?export=view&id=16JOSGpUKnBVn12RjoaloD-8lXAKdnOkE'
