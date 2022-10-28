@@ -8,10 +8,16 @@ export class TaskListService {
   private _tasks: Task[] = [
     {
       id: 1,
-      name: 'Example',
+      name: 'Training',
       time: 12000,
-      photo: 'http://drive.google.com/uc?export=view&id=16JOSGpUKnBVn12RjoaloD-8lXAKdnOkE'
+      photo: 'http://drive.google.com/uc?export=view&id=1SjcLlsDuCX1GRWEFVMwx1p-Dh11Uu7C3'
     },
+    {
+      id: 2,
+      name: 'Gym',
+      time: 3600,
+      photo: 'http://drive.google.com/uc?export=view&id=196PkvmDiTkuXX-OUd2Xq0CST2NRRc3wu',
+    }
   ]
 
   id:number = this._tasks.length+1;

@@ -12,7 +12,7 @@ export class TaskFormComponent implements OnInit {
 
   taskForm:FormGroup;
   mode:"New" | "Edit" = "New";
-  @Input('person') set task(task:Task){
+  @Input('task') set task(task:Task){
     if(task){
       this.taskForm.controls.id.setValue(task.id);
       this.taskForm.controls.name.setValue(task.name);

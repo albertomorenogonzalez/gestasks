@@ -10,8 +10,8 @@ export class AssignmentsService {
       id: 1,
       personId: 2,
       taskId: 1,
-      assignedAt: "a",
-      date: "a"
+      assignedAt: "28/10/2022",
+      date: "29/10/2022"
     },
   ]
 
@@ -43,7 +43,7 @@ export class AssignmentsService {
       _assignment.personId = assignment.personId;
       _assignment.taskId = assignment.taskId;
       _assignment.assignedAt = assignment.assignedAt;
-      _assignment.date = assignment.date
+      _assignment.date = null;
     }
     
   }

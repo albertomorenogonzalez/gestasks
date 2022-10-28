@@ -1,3 +1,31 @@
-<p>
-  assignmentform works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Asignación de una Nueva Tarea</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onDismiss(null)"><ion-icon name="close-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <form [formGroup]="assignmentForm" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
+      <ion-item>
+        <ion-label position="floating">
+          ID de la persona que va a realizar la tarea
+        </ion-label>
+        <ion-input type="number" placeholder="Introduce el ID de la persona" formControlName="personId"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          ID de la tarea a realizar
+        </ion-label>
+        <ion-input type="number" placeholder="Introduce el ID de la tarea" formControlName="taskId"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">
+          Fecha de Inicio de la tarea
+        </ion-label>
+        <ion-input type="date" placeholder="Introduce la fecha de inicio de la tarea" formControlName="assignedAt"></ion-input>
+      </ion-item>
+      <ion-button [disabled]="!assignmentForm.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+    </form>
+</ion-content>
