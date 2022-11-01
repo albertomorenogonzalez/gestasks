@@ -9,6 +9,7 @@ import { AssigntasksPageRoutingModule } from './assigntasks-routing.module';
 import { AssigntasksPage } from './assigntasks.page';
 import { AssignmentComponent } from 'src/app/assignment/assignment.component';
 import { AssignmentFormComponent } from 'src/app/assignmentform/assignmentform.component';
+import { PersonSelectableComponent } from 'src/app/personselectable/personselectable.component';
 
 @NgModule({
   imports: [
@@ -16,8 +17,8 @@ import { AssignmentFormComponent } from 'src/app/assignmentform/assignmentform.c
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    AssigntasksPageRoutingModule
+    AssigntasksPageRoutingModule //Si pongo PersonSelectableComponent aqui no funciona
   ],
-  declarations: [AssigntasksPage, AssignmentComponent, AssignmentFormComponent]
+  declarations: [AssigntasksPage, AssignmentComponent, AssignmentFormComponent, PersonSelectableComponent]
 })
 export class AssigntasksPageModule {}
