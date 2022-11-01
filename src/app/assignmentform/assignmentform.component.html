@@ -9,12 +9,7 @@
 <ion-content class="ion-padding">
     <form [formGroup]="assignmentForm" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
       <app-personselectable formControlName="personId"></app-personselectable>
-      <ion-item>
-        <ion-label position="floating">
-          ID de la tarea a realizar
-        </ion-label>
-        <ion-input type="number" placeholder="Introduce el ID de la tarea" formControlName="taskId"></ion-input>
-      </ion-item>
+      <app-taskselectable formControlName="taskId"></app-taskselectable>
       <ion-item>
         <ion-label position="floating">
           Fecha de Inicio de la tarea
