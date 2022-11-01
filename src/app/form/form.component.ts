@@ -35,7 +35,7 @@ export class FormComponent implements OnInit {
       surname:['', [Validators.required]],
       nick:['', [Validators.required]],
       sex:[''],
-      photo:['']
+      photo:['https://ionicframework.com/docs/img/demos/avatar.svg']
     });
   }
 

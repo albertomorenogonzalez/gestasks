@@ -31,7 +31,7 @@ export class TaskFormComponent implements OnInit {
       id:[null],
       name:['', [Validators.required]],
       time:[''],
-      photo:['']
+      photo:['https://ionicframework.com/docs/img/demos/avatar.svg']
     });
   }
 
