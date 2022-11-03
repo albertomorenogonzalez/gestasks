@@ -3,6 +3,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { Person } from 'src/app/models/person.model';
 import { PersonListService } from 'src/app/services/personlist.service';
 import { FormComponent } from 'src/app/form/form.component';
+import { AssignmentsService } from 'src/app/services/assignments.service';
 
 @Component({
   selector: 'app-gestpeople',
@@ -13,12 +14,13 @@ export class GestpeoplePage {
 
   constructor(
     private data: PersonListService,
+    private assignmentData: AssignmentsService,
     private modal: ModalController,
     private alert: AlertController
   ) { }
 
-  getPeople(): Person[] {
-    return this.data.getPeople();
+  getPeople() {
+    return this.data.people$;
   }
 
   async presentPersonForm(person:Person){

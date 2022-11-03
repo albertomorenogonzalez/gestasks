@@ -11,7 +11,7 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let person of getPeople()" size="6" size-xl="3">
+      <ion-col *ngFor="let person of getPeople() | async" size="6" size-xl="3">
         <app-person [person]="person" (onEdit)="onEditPerson($event)" (onDelete)="onDeletePerson($event)"></app-person>
       </ion-col>
     </ion-row>
