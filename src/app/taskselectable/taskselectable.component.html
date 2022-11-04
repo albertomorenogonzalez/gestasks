@@ -11,7 +11,7 @@
     </ion-item>
     <div class="ion-padding" slot="content">
       <ion-list>
-        <ion-item *ngFor="let task of getTask()" button detail (click)="onPersonClicked(task, accordion)">
+        <ion-item *ngFor="let task of getTask()" button detail (click)="onTaskClicked(task, accordion)">
           <ion-avatar class="task">
             <img *ngIf="task.photo" alt="Task Photo" [src]="task.photo" />
           </ion-avatar>
