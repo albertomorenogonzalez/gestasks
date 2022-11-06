@@ -19,8 +19,8 @@ export class AssigntasksPage {
 
 
 
-  getAssignments(): Assignment[] {
-    return this.data.getAssignments();
+  getAssignments() {
+    return this.data.assignments$;
   }
 
   async presentAssignmentForm(assignment:Assignment){

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Assignment } from '../models/assignment.model';
 
 @Injectable({
@@ -15,6 +16,9 @@ export class AssignmentsService {
     },
   ]
 
+  private assignmentsSubject:BehaviorSubject<Assignment[]> = new BehaviorSubject(this._assignments);
+  public assignments$ = this.assignmentsSubject.asObservable();
+
   id:number = this._assignments.length+1;
   constructor() {
 
@@ -30,11 +34,13 @@ export class AssignmentsService {
 
   deleteAssignmentById(id:number){
     this._assignments = this._assignments.filter(p=>p.id != id); 
+    this.assignmentsSubject.next(this._assignments);
   }
 
   addAssignment(assignment:Assignment){
     assignment.id = this.id++;
     this._assignments.push(assignment);
+    this.assignmentsSubject.next(this._assignments);
   }
 
   updateAssignment(assignment:Assignment){
@@ -46,5 +52,6 @@ export class AssignmentsService {
       _assignment.date = null;
     }
     
+    this.assignmentsSubject.next(this._assignments);
   }
 }

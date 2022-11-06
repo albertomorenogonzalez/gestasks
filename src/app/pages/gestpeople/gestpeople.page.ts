@@ -46,7 +46,7 @@ export class GestpeoplePage {
     });
   }
   onNewPerson(){
-    this.presentPersonForm(null);  
+    this.presentPersonForm(null);  //¿por qué borra el on new person?
   }
 
   onEditPerson(person){
@@ -55,7 +55,7 @@ export class GestpeoplePage {
 
   async onDeleteAlert(person){
     const alert = await this.alert.create({
-      header: '¿Estás seguro de que quieres borrar esta persona?', //como configurar el estilo de esto
+      header: '¿Estás seguro de que quieres borrar esta persona?', 
       buttons: [
         {
           text: 'Cancelar',
@@ -80,7 +80,7 @@ export class GestpeoplePage {
   }
   
   onDeletePerson(person){
-   this.onDeleteAlert(person);
     
+    this.onDeleteAlert(person);
   }
 }

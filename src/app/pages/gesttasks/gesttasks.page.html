@@ -11,7 +11,7 @@
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col *ngFor="let task of getTasks()" size="6" size-xl="4">
+      <ion-col *ngFor="let task of getTasks() | async" size="6" size-xl="4">
         <app-task [task]="task" (onEdit)="onEditTask($event)" (onDelete)="onDeleteTask($event)"></app-task>
       </ion-col>
     </ion-row>

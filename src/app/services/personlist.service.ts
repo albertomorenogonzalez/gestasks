@@ -76,8 +76,8 @@ export class PersonListService {
       _person.nick = person.nick;
       _person.sex = person.sex;
       _person.photo = person.photo;
-      this.peopleSubject.next(this._people);
     }
     
+    this.peopleSubject.next(this._people);
   }
 }

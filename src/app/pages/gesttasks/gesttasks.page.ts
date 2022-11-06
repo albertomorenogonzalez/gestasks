@@ -3,6 +3,7 @@ import { AlertController, ModalController } from '@ionic/angular';
 import { Task } from 'src/app/models/task.model';
 import { TaskListService } from 'src/app/services/tasklist.service';
 import { TaskFormComponent } from 'src/app/taskform/taskform.component';
+import { AssignmentsService } from 'src/app/services/assignments.service';
 
 @Component({
   selector: 'app-gesttasks',
@@ -13,12 +14,13 @@ export class GesttasksPage {
 
   constructor(
     private data: TaskListService,
+    private assignmentData: AssignmentsService,
     private modal: ModalController,
     private alert: AlertController
   ) { }
 
-  getTasks(): Task[] {
-    return this.data.getTasks();
+  getTasks() {
+    return this.data.tasks$;
   }
 
   async presentTaskForm(task:Task){
