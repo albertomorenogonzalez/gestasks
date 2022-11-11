@@ -54,8 +54,10 @@ export class GesttasksPage {
   }
 
   async onDeleteAlert(task){
+
     const alert = await this.alert.create({
-      header: '¿Estás seguro de que quieres borrar esta tarea?',
+      header: 'Atención',
+      message: '¿Está seguro de que desear borrar la tarea?',
       buttons: [
         {
           text: 'Cancelar',
@@ -78,9 +80,31 @@ export class GesttasksPage {
 
     const { role } = await alert.onDidDismiss();
   }
+
+  async onTaskExistsAlert(task){
+    const alert = await this.alert.create({
+      header: 'Error',
+      message: 'No es posible borrar la tarea porque está asignada a una persona',
+      buttons: [
+        {
+          text: 'Cerrar',
+          role: 'close',
+          handler: () => {
+           
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+  }
   
   onDeleteTask(task){
-   this.onDeleteAlert(task);
-    
+    if(!this.assignmentData.getAssignmentsByTaskId(task.id).length)
+      this.onDeleteAlert(task);
+    else
+      this.onTaskExistsAlert(task);
   }
 }

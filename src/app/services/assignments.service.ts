@@ -32,6 +32,14 @@ export class AssignmentsService {
     return this._assignments.find(p=>p.id==id);
   }
 
+  getAssignmentsByTaskId(taskId:number):Assignment[]{
+    return this._assignments.filter(a=>a.taskId == taskId);
+  }
+
+  getAssignmentsByPersonId(personId:number):Assignment[]{
+    return this._assignments.filter(a=>a.personId == personId);
+  }
+
   deleteAssignmentById(id:number){
     this._assignments = this._assignments.filter(p=>p.id != id); 
     this.assignmentsSubject.next(this._assignments);

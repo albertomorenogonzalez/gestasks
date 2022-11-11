@@ -55,7 +55,8 @@ export class GestpeoplePage {
 
   async onDeleteAlert(person){
     const alert = await this.alert.create({
-      header: '¿Estás seguro de que quieres borrar esta persona?', 
+      header:'Atención',
+      message: '¿Está seguro de que desear borrar a la persona?',
       buttons: [
         {
           text: 'Cancelar',
@@ -78,9 +79,34 @@ export class GestpeoplePage {
 
     const { role } = await alert.onDidDismiss();
   }
-  
-  onDeletePerson(person){
-    
-    this.onDeleteAlert(person);
+
+  async onPersonExistsAlert(task){
+    const alert = await this.alert.create({
+      header: 'Error',
+      message: 'No es posible borrar la persona porque está asignada a una tarea',
+      buttons: [
+        {
+          text: 'Cerrar',
+          role: 'close',
+          handler: () => {
+           
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+
+    const { role } = await alert.onDidDismiss();
   }
+
+  onDeletePerson(person){
+     if(!this.assignmentData.getAssignmentsByPersonId(person.id).length)
+     this.onDeleteAlert(person);
+    else
+      this.onPersonExistsAlert(person);
+   
+    
+  }
+
 }
