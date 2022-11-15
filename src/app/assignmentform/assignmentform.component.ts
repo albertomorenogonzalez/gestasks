@@ -32,8 +32,8 @@ export class AssignmentFormComponent implements OnInit {
       id:[null],
       personId:['', [Validators.required]],
       taskId:['', [Validators.required]],
-      assignedAt:['', [Validators.required]],
-      date:[null],
+      assignedAt:[null],
+      date:[null, [Validators.required]],
     });
   }
 

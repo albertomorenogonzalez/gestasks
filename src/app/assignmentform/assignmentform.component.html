@@ -10,12 +10,7 @@
     <form [formGroup]="assignmentForm" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
       <app-personselectable formControlName="personId"></app-personselectable>
       <app-taskselectable formControlName="taskId"></app-taskselectable>
-      <ion-item>
-        <ion-label position="floating">
-          Fecha de Inicio de la tarea
-        </ion-label>
-        <ion-input type="date" placeholder="Introduce la fecha de inicio de la tarea" formControlName="assignedAt"></ion-input>
-      </ion-item>
+      <app-datetimeselectable formControlName="date"></app-datetimeselectable>
       <ion-button [disabled]="!assignmentForm.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
     </form>
 </ion-content>

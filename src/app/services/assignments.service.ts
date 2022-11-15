@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 import { BehaviorSubject } from 'rxjs';
 import { Assignment } from '../models/assignment.model';
 
@@ -11,8 +12,8 @@ export class AssignmentsService {
       id: 1,
       personId: 2,
       taskId: 1,
-      assignedAt: "28/10/2022",
-      date: "29/10/2022"
+      assignedAt: moment().toISOString(),
+      date: moment().add(3, 'days').toISOString()
     },
   ]
 
@@ -56,8 +57,7 @@ export class AssignmentsService {
     if(_assignment){
       _assignment.personId = assignment.personId;
       _assignment.taskId = assignment.taskId;
-      _assignment.assignedAt = assignment.assignedAt;
-      _assignment.date = null;
+      _assignment.date = assignment.date;
     }
     
     this.assignmentsSubject.next(this._assignments);

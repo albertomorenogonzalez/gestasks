@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Assignment } from '../models/assignment.model';
-import { Person } from '../models/person.model';
 import { AssignmentsService } from '../services/assignments.service';
 import { PersonListService } from '../services/personlist.service';
 import { TaskListService } from '../services/tasklist.service';
