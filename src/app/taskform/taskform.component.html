@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Datos de la Tarea</ion-title>
+    <ion-title>{{'tasks.formTitle' | translate}}</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="onDismiss(null)"><ion-icon name="close-outline"></ion-icon></ion-button>
     </ion-buttons>
@@ -16,13 +16,13 @@
       </ion-item>
       <ion-item>
         <ion-label position="floating">
-          Tiempo (en segundos)  
+          {{'tasks.inputTime' | translate}} 
         </ion-label>
         <ion-input type="number" placeholder="Introduce el tiemp que va a tomar" formControlName="time"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">
-          Foto
+          {{'home.photo' | translate}}
         </ion-label>
         <ion-input type="text" placeholder="Introduce una foto (link)" formControlName="photo"></ion-input>
       </ion-item>

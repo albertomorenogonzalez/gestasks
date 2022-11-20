@@ -8,14 +8,27 @@
     "assignments":"Assign Tasks",
     "schedule":"See Assigned Tasks",
     "name":"Name",
-    "photo":"Photo"
+    "photo":"Photo",
+    "cancel":"Cancel",
+    "confirm":"Confirm"
   },
   "people":{
+    "formTitle":"Person Details",
     "surname":"Surname",
     "nick":"Nickname",
-    "sex":"Sex"
+    "sex":"Sex",
+    "selection":"Select the person who's going to make the task"
   },
   "tasks":{
-    "time":"Time"
+    "formTitle":"Task Details",
+    "time":"Length",
+    "inputTime":"Length (in seconds)",
+    "selection":"Select the task which is going to be made"
+  },
+  "assignments":{
+    "formTitle":"Assignment Details"
+  },
+  "dateTimeSelectable":{
+    "formTitle":"Choose the task realization's date"
   }
 }

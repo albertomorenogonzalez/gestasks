@@ -30,7 +30,7 @@ registerLocaleData(en)
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     { provide: LOCALE_ID,
-      useValue: 'es'} //como cambiar el formato de fecha segun el idioma ?
+      useValue: 'es'} //como cambiar el formato de fecha segun el idioma ? y en los cambios de añadir modificar ?
   ],
   bootstrap: [AppComponent],
 })

@@ -8,14 +8,27 @@
     "assignments":"Asignar Tareas",
     "schedule":"Ver Tareas Asignadas",
     "name":"Nombre",
-    "photo":"Foto"
+    "photo":"Foto",
+    "cancel":"Cancelar",
+    "confirm":"Confirmar"
   },
   "people":{
+    "formTitle":"Datos de la Persona",
     "surname":"Apellidos",
     "nick":"Apodo",
-    "sex":"Sexo"
+    "sex":"Sexo",
+    "selection":"Selecciona la persona que va a realizar la tarea"
   },
   "tasks":{
-    "time":"Duración"
+    "formTitle":"Datos de la tarea",
+    "time":"Duración",
+    "inputTime":"Duración (en segundos)",
+    "selection":"Selecciona la tarea que va a realizar"
+  },
+  "assignments":{
+    "formTitle":"Datos de la asignación"
+  },
+  "dateTimeSelectable":{
+    "formTitle":"Elige la fecha de realización de la tarea"
   }
 }

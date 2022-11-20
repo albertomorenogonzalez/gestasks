@@ -4,13 +4,13 @@
       <ng-container *ngIf="hasValue">
         <ion-label>{{date$ | async | date:'short'}}</ion-label>
       </ng-container>
-      <ion-label *ngIf="!hasValue">Elija la fecha de realización de la tarea</ion-label>
+      <ion-label *ngIf="!hasValue">{{'dateTimeSelectable.formTitle' | translate}}</ion-label>
     </ion-item>
     <div class="ion-padding" slot="content">
       <ion-datetime #datetime value="{{(date$ | async)}}" (ionChange)="onDateTimeChanged($event, accordion)">
         <ion-buttons slot="buttons">
-          <ion-button color="danger" (click)="onCancel(datetime, accordion)">Cancelar</ion-button>
-          <ion-button color="primary" (click)="onConfirm(datetime, accordion)">Hecho</ion-button>
+          <ion-button color="danger" (click)="onCancel(datetime, accordion)">{{'home.cancel' | translate}}</ion-button>
+          <ion-button color="primary" (click)="onConfirm(datetime, accordion)">{{'home.confirm' | translate}}</ion-button>
         </ion-buttons>
       </ion-datetime>
     </div>

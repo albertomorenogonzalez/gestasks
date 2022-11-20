@@ -7,7 +7,7 @@
         </ion-avatar>
         <ion-label id="name">{{selectedPerson?.surname}}, {{selectedPerson?.name}}</ion-label>
       </ng-container>
-      <ion-label *ngIf="!selectedPerson">Selecciona la persona que va a realizar la tarea</ion-label>
+      <ion-label *ngIf="!selectedPerson">{{'people.selection' | translate}}</ion-label>
     </ion-item>
     <div class="ion-padding" slot="content">
       <ion-list>
