@@ -1,0 +1,21 @@
+{
+  "home":{
+    "slogan":"Gestiona el momento",
+    "langButton":"Cambiar idioma",
+    "home":"Inicio",
+    "people":"Gestionar Personas",
+    "tasks":"Gestionar Tareas",
+    "assignments":"Asignar Tareas",
+    "schedule":"Ver Tareas Asignadas",
+    "name":"Nombre",
+    "photo":"Foto"
+  },
+  "people":{
+    "surname":"Apellidos",
+    "nick":"Apodo",
+    "sex":"Sexo"
+  },
+  "tasks":{
+    "time":"Duración"
+  }
+}

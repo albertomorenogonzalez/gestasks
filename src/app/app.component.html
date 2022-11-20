@@ -3,13 +3,14 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
+            <ion-button (click)="onLanguage()">{{'home.langButton' | translate}}</ion-button>
           <ion-list-header>GESTASKS</ion-list-header>
-          <ion-note>Gestiona el momento</ion-note>
+          <ion-note>{{'home.slogan' | translate}}</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
               <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
+              <ion-label>{{'home.' + p.title | translate}}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>

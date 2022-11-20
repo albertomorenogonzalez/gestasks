@@ -1,0 +1,21 @@
+{
+  "home":{
+    "slogan":"Manage the moment",
+    "langButton":"Change Language",
+    "home":"Home",
+    "people":"Manage People",
+    "tasks":"Manage Tasks",
+    "assignments":"Assign Tasks",
+    "schedule":"See Assigned Tasks",
+    "name":"Name",
+    "photo":"Photo"
+  },
+  "people":{
+    "surname":"Surname",
+    "nick":"Nickname",
+    "sex":"Sex"
+  },
+  "tasks":{
+    "time":"Time"
+  }
+}

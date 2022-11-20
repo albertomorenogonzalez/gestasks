@@ -7,14 +7,24 @@ import { IonicModule } from '@ionic/angular';
 import { SeetasksPageRoutingModule } from './seetasks-routing.module';
 
 import { SeetasksPage } from './seetasks.page';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { createTranslateLoader } from 'src/app/utils/translate';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SeetasksPageRoutingModule
-  ],
+    SeetasksPageRoutingModule,
+    HttpClientModule,
+    TranslateModule.forChild({
+      loader: {
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [HttpClient]
+      }
+      })],
   declarations: [SeetasksPage]
 })
 export class SeetasksPageModule {}

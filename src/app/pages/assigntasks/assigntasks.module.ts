@@ -12,6 +12,9 @@ import { AssignmentFormComponent } from 'src/app/assignmentform/assignmentform.c
 import { PersonSelectableComponent } from 'src/app/personselectable/personselectable.component';
 import { TaskSelectableComponent } from 'src/app/taskselectable/taskselectable.component';
 import { DateTimeSelectableComponent } from 'src/app/datetimeselectable/datetimeselectable.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { createTranslateLoader } from 'src/app/utils/translate';
 
 @NgModule({
   imports: [
@@ -19,6 +22,14 @@ import { DateTimeSelectableComponent } from 'src/app/datetimeselectable/datetime
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    TranslateModule.forChild({
+      loader: {
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [HttpClient]
+      }
+      }),
     AssigntasksPageRoutingModule //Si pongo PersonSelectableComponent/TaskSelectableComponent aqui no funciona
   ],
   declarations: [AssigntasksPage, AssignmentComponent, AssignmentFormComponent, PersonSelectableComponent, TaskSelectableComponent, DateTimeSelectableComponent]

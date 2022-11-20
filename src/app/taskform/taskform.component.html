@@ -10,13 +10,13 @@
     <form [formGroup]="taskForm" (ngSubmit)="onSubmit()" (keyup.enter)="onSubmit()">
       <ion-item>
         <ion-label position="floating">
-          Nombre
+          {{'home.name' | translate}}
         </ion-label>
         <ion-input type="text" placeholder="Introduce el nombre" formControlName="name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">
-          Tiempo (en segundos)
+          Tiempo (en segundos)  
         </ion-label>
         <ion-input type="number" placeholder="Introduce el tiemp que va a tomar" formControlName="time"></ion-input>
       </ion-item>

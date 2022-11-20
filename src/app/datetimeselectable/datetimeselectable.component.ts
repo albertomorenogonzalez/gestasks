@@ -1,6 +1,7 @@
 import { Component, forwardRef, OnDestroy, OnInit } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { IonAccordionGroup, IonDatetime } from '@ionic/angular';
+import { DEFAULT_LANGUAGE } from '@ngx-translate/core';
 import * as moment from 'moment';
 import { BehaviorSubject } from 'rxjs';
 import { AssignmentsService } from '../services/assignments.service';
