@@ -12,32 +12,32 @@
         <ion-label position="floating">
           {{'home.name' | translate}}
         </ion-label>
-        <ion-input type="text" placeholder="Introduce el nombre" formControlName="name"></ion-input>
+        <ion-input type="text" placeholder="{{'home.namePlaceholder' | translate}}" formControlName="name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">
           {{'people.surname' | translate}}
         </ion-label>
-        <ion-input type="text" placeholder="Introduce los apellidos" formControlName="surname"></ion-input>
+        <ion-input type="text" placeholder="{{'people.surnamePlaceholder' | translate}}" formControlName="surname"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">
           {{'people.nick' | translate}}
         </ion-label>
-        <ion-input type="text" placeholder="Introduce el apodo" formControlName="nick"></ion-input>
+        <ion-input type="text" placeholder="{{'people.nickPlaceholder' | translate}}" formControlName="nick"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">
           {{'people.sex' | translate}}
         </ion-label>
-        <ion-input type="text" placeholder="Introduce el sexo" formControlName="sex"></ion-input>
+        <ion-input type="text" placeholder="{{'people.sexPlaceholder' | translate}}" formControlName="sex"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label position="floating">
           {{'home.photo' | translate}}
         </ion-label>
-        <ion-input type="text" placeholder="Introduce una foto (link)" formControlName="photo"></ion-input>
+        <ion-input type="text" placeholder="{{'home.photoPlaceholder' | translate}}" formControlName="photo"></ion-input>
       </ion-item>
-      <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+      <ion-button [disabled]="!form.valid" type="submit">{{mode=="Edit" ? ['home.update' | translate] : ['home.add' | translate]}}</ion-button>
     </form>
 </ion-content>

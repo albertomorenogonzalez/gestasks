@@ -4,6 +4,8 @@ import { Task } from 'src/app/models/task.model';
 import { TaskListService } from 'src/app/services/tasklist.service';
 import { TaskFormComponent } from 'src/app/taskform/taskform.component';
 import { AssignmentsService } from 'src/app/services/assignments.service';
+import { TranslateService } from '@ngx-translate/core';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-gesttasks',
@@ -16,7 +18,8 @@ export class GesttasksPage {
     private data: TaskListService,
     private assignmentData: AssignmentsService,
     private modal: ModalController,
-    private alert: AlertController
+    private alert: AlertController,
+    private translate:TranslateService
   ) { }
 
   getTasks() {
@@ -56,18 +59,18 @@ export class GesttasksPage {
   async onDeleteAlert(task){
 
     const alert = await this.alert.create({
-      header: 'Atención',
-      message: '¿Está seguro de que desear borrar la tarea?',
+      header: await lastValueFrom(this.translate.get('home.warning')),
+      message: await lastValueFrom(this.translate.get('tasks.deleteMessage')),
       buttons: [
         {
-          text: 'Cancelar',
+          text: await lastValueFrom(this.translate.get('home.cancel')),
           role: 'cancel',
           handler: () => {
             console.log("Operacion cancelada");
           },
         },
         {
-          text: 'Borrar',
+          text: await lastValueFrom(this.translate.get('home.delete')),
           role: 'confirm',
           handler: () => {
             this.data.deleteTaskById(task.id);
@@ -84,10 +87,10 @@ export class GesttasksPage {
   async onTaskExistsAlert(task){
     const alert = await this.alert.create({
       header: 'Error',
-      message: 'No es posible borrar la tarea porque está asignada a una persona',
+      message: await lastValueFrom(this.translate.get('tasks.errorMessage')),
       buttons: [
         {
-          text: 'Cerrar',
+          text: await lastValueFrom(this.translate.get('home.close')),
           role: 'close',
           handler: () => {
            

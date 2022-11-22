@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Console } from 'console';
 import * as moment from 'moment';
+import { AssignmentComponent } from './assignment/assignment.component';
+import { AssignmentsService } from './services/assignments.service';
+import { LocaleService } from './services/localeService';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -19,7 +22,9 @@ export class AppComponent {
   language = 0
   
   constructor(
-    private translate: TranslateService
+    private translate: TranslateService,
+    private localeService:LocaleService,
+    private cdr:ChangeDetectorRef
   ) {
     this.translate.setDefaultLang('es')
   }
@@ -29,11 +34,16 @@ export class AppComponent {
 
     switch(this.language) {
       case 0:
-        this.translate.setDefaultLang('es')
+        this.translate.setDefaultLang('es');
+        this.localeService.registerCulture('es');
+        console.log(this.localeService.locale);
         break;
       case 1:
-        this.translate.setDefaultLang('en')
+        this.translate.setDefaultLang('en');
+        this.localeService.registerCulture('en-uk');
+        console.log(this.localeService.locale);
         break;
     }
+    this.cdr.detectChanges();
   }
 }

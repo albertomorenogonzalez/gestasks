@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController, AlertController } from '@ionic/angular';
+import { TranslateService } from '@ngx-translate/core';
+import { lastValueFrom } from 'rxjs';
 import { AssignmentFormComponent } from 'src/app/assignmentform/assignmentform.component';
 import { Assignment } from 'src/app/models/assignment.model';
 import { AssignmentsService } from 'src/app/services/assignments.service';
@@ -14,7 +16,8 @@ export class AssigntasksPage {
   constructor(
     private data: AssignmentsService,
     private modal: ModalController,
-    private alert: AlertController
+    private alert: AlertController,
+    private translate:TranslateService
   ) { }
 
 
@@ -55,7 +58,8 @@ export class AssigntasksPage {
 
   async onDeleteAlert(assignment){
     const alert = await this.alert.create({
-      header: '¿Estás seguro de que quieres borrar esta asignación?', 
+      header: await lastValueFrom(this.translate.get('home.warning')), 
+      message: await lastValueFrom(this.translate.get('assignments.deleteMessage')),
       buttons: [
         {
           text: 'Cancelar',

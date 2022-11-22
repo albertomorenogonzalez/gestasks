@@ -4,6 +4,8 @@ import { Person } from 'src/app/models/person.model';
 import { PersonListService } from 'src/app/services/personlist.service';
 import { FormComponent } from 'src/app/form/form.component';
 import { AssignmentsService } from 'src/app/services/assignments.service';
+import { TranslateService } from '@ngx-translate/core';
+import { lastValueFrom, reduce } from 'rxjs';
 
 @Component({
   selector: 'app-gestpeople',
@@ -16,7 +18,8 @@ export class GestpeoplePage {
     private data: PersonListService,
     private assignmentData: AssignmentsService,
     private modal: ModalController,
-    private alert: AlertController
+    private alert: AlertController,
+    private translate:TranslateService
   ) { }
 
   getPeople() {
@@ -46,7 +49,7 @@ export class GestpeoplePage {
     });
   }
   onNewPerson(){
-    this.presentPersonForm(null);  //¿por qué borra el on new person?
+    this.presentPersonForm(null);
   }
 
   onEditPerson(person){
@@ -55,18 +58,18 @@ export class GestpeoplePage {
 
   async onDeleteAlert(person){
     const alert = await this.alert.create({
-      header:'Atención',
-      message: '¿Está seguro de que desear borrar a la persona?',
+      header: await lastValueFrom(this.translate.get('home.warning')),
+      message: await lastValueFrom(this.translate.get('people.deleteMessage')),
       buttons: [
         {
-          text: 'Cancelar',
+          text: await lastValueFrom(this.translate.get('home.cancel')),
           role: 'cancel',
           handler: () => {
             console.log("Operacion cancelada");
           },
         },
         {
-          text: 'Borrar',
+          text: await lastValueFrom(this.translate.get('home.delete')),
           role: 'confirm',
           handler: () => {
             this.data.deletePersonById(person.id);
@@ -83,10 +86,10 @@ export class GestpeoplePage {
   async onPersonExistsAlert(task){
     const alert = await this.alert.create({
       header: 'Error',
-      message: 'No es posible borrar la persona porque está asignada a una tarea',
+      message: await lastValueFrom(this.translate.get('people.errorMessage')),
       buttons: [
         {
-          text: 'Cerrar',
+          text: await lastValueFrom(this.translate.get('home.close')),
           role: 'close',
           handler: () => {
            

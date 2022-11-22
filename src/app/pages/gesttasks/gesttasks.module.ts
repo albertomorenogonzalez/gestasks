@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -12,6 +12,8 @@ import { TaskFormComponent } from 'src/app/taskform/taskform.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { createTranslateLoader } from 'src/app/utils/translate';
+import { LocaleId } from 'src/app/app.module';
+import { LocaleService } from 'src/app/services/localeService';
 
 @NgModule({
   imports: [
@@ -28,6 +30,12 @@ import { createTranslateLoader } from 'src/app/utils/translate';
       deps: [HttpClient]
       }
       })],
-  declarations: [GesttasksPage, TaskComponent, TaskFormComponent]
+  declarations: [GesttasksPage, TaskComponent, TaskFormComponent],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      deps: [LocaleService],
+      useClass: LocaleId
+    }],
 })
 export class GesttasksPageModule {}

@@ -3,7 +3,6 @@
     <ion-menu contentId="main-content" type="overlay">
       <ion-content>
         <ion-list id="inbox-list">
-            <ion-button (click)="onLanguage()">{{'home.langButton' | translate}}</ion-button>
           <ion-list-header>GESTASKS</ion-list-header>
           <ion-note>{{'home.slogan' | translate}}</ion-note>
 
@@ -15,7 +14,26 @@
           </ion-menu-toggle>
         </ion-list>
 
-        
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-fab>
+                <ion-fab-button (click)="onLanguage()">
+                  <ion-icon name="language-outline"></ion-icon>
+                </ion-fab-button>
+              </ion-fab>
+            </ion-col>
+            <ion-col>
+              <ion-row>
+                <ion-note>{{'home.language' | translate}}</ion-note>
+              </ion-row>
+              <ion-row>
+                <ion-note>{{'home.action' | translate}}</ion-note>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
       </ion-content>
     </ion-menu>
     <ion-router-outlet id="main-content"></ion-router-outlet>

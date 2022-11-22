@@ -11,6 +11,6 @@
       <app-personselectable formControlName="personId"></app-personselectable>
       <app-taskselectable formControlName="taskId"></app-taskselectable>
       <app-datetimeselectable formControlName="date"></app-datetimeselectable>
-      <ion-button [disabled]="!assignmentForm.valid" type="submit">{{mode=="Edit"?"Modificar":"Añadir"}}</ion-button>
+      <ion-button [disabled]="!assignmentForm.valid" type="submit">{{mode=="Edit" ? ['home.update' | translate] : ['home.add' | translate]}}</ion-button>
     </form>
 </ion-content>

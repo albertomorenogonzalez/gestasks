@@ -12,6 +12,22 @@ import en from '@angular/common/locales/en';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { createTranslateLoader } from './utils/translate';
+import { LocaleService } from './services/localeService';
+
+
+export class LocaleId extends String{
+  constructor(private locale:LocaleService){
+    super()
+
+  }
+  toString(): string {
+    return this.locale.locale;
+  }
+
+  valueOf(): string {
+    return this.toString();
+  }
+}
 
 registerLocaleData(es)
 registerLocaleData(en)
@@ -29,8 +45,12 @@ registerLocaleData(en)
       })],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    { provide: LOCALE_ID,
-      useValue: 'es'} //como cambiar el formato de fecha segun el idioma ? y en los cambios de añadir modificar ?
+    {
+      provide: LOCALE_ID,
+      deps: [LocaleService],
+      useClass: LocaleId
+    },
+ 
   ],
   bootstrap: [AppComponent],
 })

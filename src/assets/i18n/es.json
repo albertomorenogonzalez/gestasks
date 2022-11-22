@@ -1,7 +1,8 @@
 {
   "home":{
     "slogan":"Gestiona el momento",
-    "langButton":"Cambiar idioma",
+    "language":"Idioma: Español",
+    "action":"Pulse para cambiar",
     "home":"Inicio",
     "people":"Gestionar Personas",
     "tasks":"Gestionar Tareas",
@@ -9,24 +10,40 @@
     "schedule":"Ver Tareas Asignadas",
     "name":"Nombre",
     "photo":"Foto",
+    "add":"Añadir",
+    "update":"Modificar",
     "cancel":"Cancelar",
-    "confirm":"Confirmar"
+    "confirm":"Confirmar",
+    "warning":"Atención",
+    "delete":"Borrar",
+    "close":"Cerrar",
+    "namePlaceholder":"Introduce el nombre",
+    "photoPlaceholder":"Introduce una foto (link)"
   },
   "people":{
     "formTitle":"Datos de la Persona",
     "surname":"Apellidos",
     "nick":"Apodo",
     "sex":"Sexo",
-    "selection":"Selecciona la persona que va a realizar la tarea"
+    "selection":"Selecciona la persona que va a realizar la tarea",
+    "deleteMessage":"¿Está seguro de que desear borrar a la persona?",
+    "errorMessage":"No es posible borrar la persona porque está asignada a una tarea",
+    "surnamePlaceholder":"Introduce los apellidos",
+    "nickPlaceholder":"Introduce el apodo",
+    "sexPlaceholder":"Introduce el sexo"
   },
   "tasks":{
     "formTitle":"Datos de la tarea",
     "time":"Duración",
     "inputTime":"Duración (en segundos)",
-    "selection":"Selecciona la tarea que va a realizar"
+    "selection":"Selecciona la tarea que va a realizar",
+    "deleteMessage":"¿Está seguro de que desear borrar la tarea?",
+    "errorMessage":"No es posible borrar esta tarea porque está asignada a una persona",
+    "lengthPlaceholder":"Introduce el tiempo que va a tomar"
   },
   "assignments":{
-    "formTitle":"Datos de la asignación"
+    "formTitle":"Datos de la asignación",
+    "deleteMessage":"¿Estás seguro de que quieres borrar esta asignación?"
   },
   "dateTimeSelectable":{
     "formTitle":"Elige la fecha de realización de la tarea"

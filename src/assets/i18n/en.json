@@ -1,7 +1,8 @@
 {
   "home":{
     "slogan":"Manage the moment",
-    "langButton":"Change Language",
+    "language":"Language: English",
+    "action":"Tap to change",
     "home":"Home",
     "people":"Manage People",
     "tasks":"Manage Tasks",
@@ -9,24 +10,40 @@
     "schedule":"See Assigned Tasks",
     "name":"Name",
     "photo":"Photo",
+    "add":"Add",
+    "update":"Update",
     "cancel":"Cancel",
-    "confirm":"Confirm"
+    "confirm":"Confirm",
+    "warning":"Warning",
+    "delete":"Delete",
+    "close":"Close",
+    "namePlaceholder":"Type the name",
+    "photoPlaceholder":"Grab here a photo (link)"
   },
   "people":{
     "formTitle":"Person Details",
     "surname":"Surname",
     "nick":"Nickname",
     "sex":"Sex",
-    "selection":"Select the person who's going to make the task"
+    "selection":"Select the person who's going to make the task",
+    "deleteMessage":"Are you sure you want to delete this person?",
+    "errorMessage":"It's not possible to delete this person because a task is assigned to them",
+    "surnamePlaceholder":"Type the surname",
+    "nickPlaceholder":"Type the nick",
+    "sexPlaceholder":"Type the sex"
   },
   "tasks":{
     "formTitle":"Task Details",
     "time":"Length",
     "inputTime":"Length (in seconds)",
-    "selection":"Select the task which is going to be made"
+    "selection":"Select the task which is going to be made",
+    "deleteMessage":"Are you sure you want to delete this task?",
+    "errorMessage":"It's not possible to delete this task because a person is assigned to it",
+    "lengthPlaceholder":"Type the length of the task (in seconds)"
   },
   "assignments":{
-    "formTitle":"Assignment Details"
+    "formTitle":"Assignment Details",
+    "deleteMessage":"Are you sure you want to delete this assignment?"
   },
   "dateTimeSelectable":{
     "formTitle":"Choose the task realization's date"

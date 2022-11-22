@@ -1,10 +1,11 @@
 import { Component, forwardRef, OnDestroy, OnInit } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 import { IonAccordionGroup, IonDatetime } from '@ionic/angular';
-import { DEFAULT_LANGUAGE } from '@ngx-translate/core';
+import { DEFAULT_LANGUAGE, TranslateService } from '@ngx-translate/core';
 import * as moment from 'moment';
 import { BehaviorSubject } from 'rxjs';
 import { AssignmentsService } from '../services/assignments.service';
+import { LocaleService } from '../services/localeService';
 
 export const DATE_TIME_VALUE_ACCESSOR: any = {
   provide: NG_VALUE_ACCESSOR,
@@ -23,7 +24,8 @@ export class DateTimeSelectableComponent implements OnInit, ControlValueAccessor
   hasValue = false;
 
   constructor(
-    private data:AssignmentsService
+    private data:AssignmentsService,
+    private translateData:LocaleService
   ) { }
 
   ngOnDestroy(): void {
@@ -83,6 +85,10 @@ export class DateTimeSelectableComponent implements OnInit, ControlValueAccessor
 
   onConfirm(datetime:IonDatetime, accordion:IonAccordionGroup){
     datetime.confirm();
+  }
+
+  getLocale(): string {
+    return this.translateData.locale;
   }
 }
 
