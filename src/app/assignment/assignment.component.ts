@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Assignment } from '../models/assignment.model';
 import { AssignmentsService } from '../services/assignments.service';
+import { LocaleService } from '../services/localeService';
 import { PersonListService } from '../services/personlist.service';
 import { TaskListService } from '../services/tasklist.service';
 
@@ -18,7 +19,8 @@ export class AssignmentComponent implements OnInit {
   constructor(
     private assignmentData:AssignmentsService,
     private personData:PersonListService,
-    private taskData:TaskListService
+    private taskData:TaskListService,
+    public locale:LocaleService
   ) { }
 
   ngOnInit() {}

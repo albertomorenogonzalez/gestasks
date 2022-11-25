@@ -7,7 +7,7 @@
           <img src="{{getPersonById(assignment.personId).photo}}" id="person"/>
         </ion-col>
         <ion-col size="7">
-          <p>{{assignment.date | date:'short'}}</p>
+          <p>{{assignment.date | date:'short':undefined:locale.locale}}</p>
         </ion-col>
         <ion-col size="2">
           <ion-row>

@@ -1,9 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { Console } from 'console';
-import * as moment from 'moment';
-import { AssignmentComponent } from './assignment/assignment.component';
-import { AssignmentsService } from './services/assignments.service';
 import { LocaleService } from './services/localeService';
 @Component({
   selector: 'app-root',
